@@ -52,5 +52,40 @@ namespace CalculetteTest
             Calculette_Agile.Calculate calculate = new Calculate();
             Assert.AreEqual(calculate.Soustraction("-1", "-10"), "9");
         }
+
+        [TestMethod]
+        public void TestMultiplication()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreEqual(calculate.Multiplication("10", "10"), "100");
+        }
+
+        [TestMethod]
+        public void TestMultiplicationNegatif()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreEqual(calculate.Multiplication("-10", "10"), "-100");
+        }
+
+        [TestMethod]
+        public void TestMultiplicationDoubleNegatif()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreEqual(calculate.Multiplication("-10", "-10"), "100");
+        }
+
+        [TestMethod]
+        public void TestMultiplicationDecimal()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreEqual(calculate.Multiplication("0,5", "2"), "1");
+        }
+
+        [TestMethod]
+        public void TestDivision()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreEqual(calculate.Division("10", "2"), "5");
+        }
     }
 }

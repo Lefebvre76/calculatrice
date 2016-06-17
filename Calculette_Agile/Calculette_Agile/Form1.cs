@@ -10,6 +10,14 @@ using System.Windows.Forms;
 
 namespace Calculette_Agile
 {
+    /// <summary>
+    /// Calculette_Agile
+    /// Authors: Elise + Loic + Igor
+    /// Creation date: 2016/06/16
+    /// Last modified: 2016/06/17
+    /// -------------------------
+    /// Default form: interacts with user's actions
+    /// </summary>
     public partial class Calculator : Form
     {
 
@@ -32,7 +40,9 @@ namespace Calculette_Agile
 
 
 
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Calculator()
         {
             InitializeComponent();
@@ -40,6 +50,13 @@ namespace Calculette_Agile
             EqualButton.Enabled = false;
         }
 
+        /// <summary>
+        /// OnNumericButtonClick
+        /// ----------------------------
+        /// Reacts to numeric buttons push events
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnNumericButtonClick(object sender, EventArgs e)
         {
             setOperatorsEnabled(true);
@@ -65,7 +82,13 @@ namespace Calculette_Agile
             lastIsOperand = false;
         }
 
-       
+       /// <summary>
+       /// OnOperationButtonClick
+       /// ----------------------------
+       /// Reacts to operation buttons push events
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void OnOperationButtonClick(object sender, EventArgs e)
         {
             setOperatorsEnabled(false);
@@ -76,22 +99,13 @@ namespace Calculette_Agile
             DisplayTextBox.Text = "";
             lastIsOperand = true;
             SignTextBox.Text = tagValue;
-            /*
-            if (displayValue == "0" || displayValue == "")
-            {
-                DisplayTextBox.Text = "-";
-                lastIsOperand = false;
-            }
-            else
-            {
-             * */
 
             if (result.Equals("Err /0"))
             {
                 result = displayValue;
                 selectedOperator = customOperator.equals;
                 DisplayTextBox.Text = displayValue;
-                lastOperand(tagValue);
+                lastOperator(tagValue);
             }
             else
             {
@@ -113,16 +127,21 @@ namespace Calculette_Agile
                         break;
                 }
                 DisplayTextBox.Text = result;
-                lastOperand(tagValue);
+                lastOperator(tagValue);
                 if (result.Equals("Err /0"))
                 {
                     setOperatorsEnabled(false);
                 }
             }
-
-            //}
         }
 
+        /// <summary>
+        /// OnEqualButtonClick
+        /// ----------------------------
+        /// Reacts to = button push event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnEqualButtonClick(object sender, EventArgs e)
         {
             string displayValue = DisplayTextBox.Text;
@@ -133,7 +152,7 @@ namespace Calculette_Agile
             {
                 result = displayValue;
                 selectedOperator = customOperator.equals;
-                lastOperand("=");
+                lastOperator("=");
                 DisplayTextBox.Text = displayValue;
             }
             else
@@ -162,7 +181,7 @@ namespace Calculette_Agile
                 }
             
                 DisplayTextBox.Text = result;
-                lastOperand("=");
+                lastOperator("=");
                 EqualButton.Enabled = false;
                 if (result.Equals("Err /0"))
                 {
@@ -171,7 +190,13 @@ namespace Calculette_Agile
             }
         }
 
-        public void lastOperand (string tag)
+        /// <summary>
+        /// lastOperator
+        /// ----------------------------
+        /// Defines last operator entered by user
+        /// </summary>
+        /// <param name="tag"></param>
+        public void lastOperator (string tag)
         {
             switch (tag)
             {
@@ -195,6 +220,13 @@ namespace Calculette_Agile
             }
         }
 
+        /// <summary>
+        /// OnClearButtonClick
+        /// ----------------------------
+        /// Reacts to clear and back buttons push events
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClearButtonClick(object sender, EventArgs e)
         {
             string tagValue = ((Button)sender).Tag.ToString();
@@ -227,6 +259,13 @@ namespace Calculette_Agile
             }
         }
 
+        /// <summary>
+        /// OnChangeSignButtonClick
+        /// ----------------------------
+        /// Reacts to +/- button push event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnChangeSignButtonClick(object sender, EventArgs e)
         {
             if (lastIsOperand)
@@ -250,6 +289,12 @@ namespace Calculette_Agile
             
         }
 
+        /// <summary>
+        /// setOperatorsEnabled
+        /// ----------------------------
+        /// Enables/disables operators buttons
+        /// </summary>
+        /// <param name="isEnabled"></param>
         private void setOperatorsEnabled(bool isEnabled)
         {
             DivideButton.Enabled = isEnabled;

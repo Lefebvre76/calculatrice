@@ -23,6 +23,14 @@ namespace Calculette_Agile
 
         }
 
+        /// <summary>
+        /// Addition
+        /// --------------------------
+        /// Adds ope2 to ope1
+        /// </summary>
+        /// <param name="ope1"></param>
+        /// <param name="ope2"></param>
+        /// <returns></returns>
         public string Addition(string ope1, string ope2)
         {
             float operande1 = float.Parse(ope1);
@@ -31,21 +39,42 @@ namespace Calculette_Agile
             return result;
         }
 
-
+        /// <summary>
+        /// Soustraction
+        /// --------------------------
+        /// Substracts ope2 from ope1
+        /// </summary>
+        /// <param name="ope1"></param>
+        /// <param name="ope2"></param>
+        /// <returns></returns>
         public string Soustraction(string ope1, string ope2)
         {
             result = (float.Parse(ope1) - (float.Parse(ope2))).ToString().Replace('.', ',');
             return result;
         }
 
-
+        /// <summary>
+        /// Multiplication
+        /// --------------------------
+        /// Multiplies ope1 by ope2
+        /// </summary>
+        /// <param name="ope1"></param>
+        /// <param name="ope2"></param>
+        /// <returns></returns>
         public string Multiplication(string ope1, string ope2)
         {
             result = (float.Parse(ope1) * (float.Parse(ope2))).ToString().Replace('.', ',');
             return result;
         }
 
-
+        /// <summary>
+        /// Division
+        /// --------------------------
+        /// Divides ope1 by ope2
+        /// </summary>
+        /// <param name="ope1"></param>
+        /// <param name="ope2"></param>
+        /// <returns></returns>
         public string Division(string ope1, string ope2)
         {
             float ope2Float = float.Parse(ope2);
@@ -60,13 +89,25 @@ namespace Calculette_Agile
             return result;
         }
 
-
+        /// <summary>
+        /// ClearAll
+        /// --------------------------
+        /// Simulates the Clear All button
+        /// </summary>
+        /// <returns></returns>
         public string ClearAll()
         {
             result = "0";
             return result;
         }
 
+        /// <summary>
+        /// ClearLastDigit
+        /// --------------------------
+        /// Removes far right digit from last entry
+        /// </summary>
+        /// <param name="displayDigits"></param>
+        /// <returns></returns>
         public string ClearLastDigit(string displayDigits)
         {
             if (displayDigits.Length > 1)
