@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace Calculette_Agile
 {
+    /// <summary>
+    /// Calculate
+    /// Authors: Elise + Loic + Igor
+    /// Creation date: 2016/06/16
+    /// Last modified: 2016/06/17
+    /// -------------------------
+    /// Offers basic calculation methods
+    /// </summary>
     public class Calculate
     {
         string result = "";

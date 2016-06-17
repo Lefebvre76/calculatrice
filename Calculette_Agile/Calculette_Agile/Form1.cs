@@ -85,6 +85,16 @@ namespace Calculette_Agile
             else
             {
              * */
+
+            if (result.Equals("Err /0"))
+            {
+                result = displayValue;
+                selectedOperator = customOperator.equals;
+                DisplayTextBox.Text = displayValue;
+                lastOperand(tagValue);
+            }
+            else
+            {
                 switch (selectedOperator)
                 {
                     case customOperator.addition:
@@ -104,6 +114,12 @@ namespace Calculette_Agile
                 }
                 DisplayTextBox.Text = result;
                 lastOperand(tagValue);
+                if (result.Equals("Err /0"))
+                {
+                    setOperatorsEnabled(false);
+                }
+            }
+
             //}
         }
 
@@ -113,31 +129,46 @@ namespace Calculette_Agile
             DisplayTextBox.Text = "";
             lastIsOperand = true;
             SignTextBox.Text = "=";
-            switch (selectedOperator)
+            if (result.Equals("Err /0"))
             {
-                case customOperator.addition:
-                    result = calcul.Addition(result, displayValue);
-                    break;
-                case customOperator.soustraction:
-                    result = calcul.Soustraction(result, displayValue);
-                    break;
-                case customOperator.multiplication:
-                    result = calcul.Multiplication(result, displayValue);
-                    break;
-                case customOperator.division:
-                    result = calcul.Division(result, displayValue);
-                    break;
-                case customOperator.equals:
-                    // result = "0";
-                    // operand1 = "0";
-                    break;
-
-                default:
-                    break;
+                result = displayValue;
+                selectedOperator = customOperator.equals;
+                lastOperand("=");
+                DisplayTextBox.Text = displayValue;
             }
-            DisplayTextBox.Text = result;
-            lastOperand("=");
-            EqualButton.Enabled = false;
+            else
+            {
+                switch (selectedOperator)
+                {
+                    case customOperator.addition:
+                        result = calcul.Addition(result, displayValue);
+                        break;
+                    case customOperator.soustraction:
+                        result = calcul.Soustraction(result, displayValue);
+                        break;
+                    case customOperator.multiplication:
+                        result = calcul.Multiplication(result, displayValue);
+                        break;
+                    case customOperator.division:
+                        result = calcul.Division(result, displayValue);
+                        break;
+                    case customOperator.equals:
+                        // result = "0";
+                        // operand1 = "0";
+                        break;
+
+                    default:
+                        break;
+                }
+            
+                DisplayTextBox.Text = result;
+                lastOperand("=");
+                EqualButton.Enabled = false;
+                if (result.Equals("Err /0"))
+                {
+                    setOperatorsEnabled(false);
+                }
+            }
         }
 
         public void lastOperand (string tag)
@@ -173,6 +204,7 @@ namespace Calculette_Agile
                     result = calcul.ClearAll();
                     DisplayTextBox.Text = result;
                     SignTextBox.Text = "";
+                    setOperatorsEnabled(true);
                     break;
 
                 case "Back":
@@ -186,6 +218,7 @@ namespace Calculette_Agile
                     DisplayTextBox.Text = "0";
                     setOperatorsEnabled(false);
                     EqualButton.Enabled = false;
+                    setOperatorsEnabled(true);
                     break;
 
                 default:
