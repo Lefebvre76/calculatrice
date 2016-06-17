@@ -69,7 +69,6 @@
             // DotButton
             // 
             this.DotButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.DotButton.Enabled = false;
             this.DotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DotButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DotButton.Location = new System.Drawing.Point(111, 402);
@@ -79,6 +78,7 @@
             this.DotButton.Tag = ".";
             this.DotButton.Text = ",";
             this.DotButton.UseVisualStyleBackColor = false;
+            this.DotButton.Click += new System.EventHandler(this.OnNumericButtonClick);
             // 
             // EqualButton
             // 
@@ -398,7 +398,6 @@
         #endregion
 
         private System.Windows.Forms.Button ZeroButton;
-        private System.Windows.Forms.Button DotButton;
         private System.Windows.Forms.Button EqualButton;
         private System.Windows.Forms.Button OneButton;
         private System.Windows.Forms.Button TwoButton;
@@ -419,6 +418,7 @@
         private System.Windows.Forms.TextBox DisplayTextBox;
         private System.Windows.Forms.TextBox SignTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DotButton;
     }
 }
 
