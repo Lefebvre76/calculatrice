@@ -51,7 +51,9 @@ namespace Calculette_Agile
             {
                 if (DisplayTextBox.Text.Length < 10)
                 {
-                    DisplayTextBox.Text += myNumber.ToString();
+                    // Clear all left zeros
+                DisplayTextBox.Text = DisplayTextBox.Text.TrimStart('0');
+                DisplayTextBox.Text += myNumber.ToString();
                 }
             }
             lastIsOperand = false;
@@ -106,6 +108,7 @@ namespace Calculette_Agile
                     result = "0";
                     operand1 = "0";
                     break;
+
                 default:
                     break;
             }
@@ -125,13 +128,32 @@ namespace Calculette_Agile
                     break;
                 case "=":
                     selectedOperator = customOperator.equals;
-
                     break;
                 default:
                     break;
             }
         }
-    }
 
+        private void OnClearButtonClick(object sender, EventArgs e)
+        {
+            string tagValue = ((Button)sender).Tag.ToString();
+            switch (tagValue)
+            {
+                case "CA":
+                    result = calcul.ClearAll();
+                    DisplayTextBox.Text = result;
+                    SignTextBox.Text = "";
+                    break;
+
+                case "Back":
+                    DisplayTextBox.Text = calcul.ClearLastDigit(DisplayTextBox.Text);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+    }
     
 }

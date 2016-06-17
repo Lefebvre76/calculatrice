@@ -21,10 +21,31 @@ namespace Calculette_Agile
             return result;
         }
 
+
         public string Soustraction(string ope1, string ope2)
         {
             result = (float.Parse(ope1) - (float.Parse(ope2))).ToString().Replace('.', ',');
             return result;
+        }
+
+        public string ClearAll()
+        {
+            result = "0";
+            return result;
+        }
+
+        public string ClearLastDigit(string displayDigits)
+        {
+            if (displayDigits.Length > 1)
+            {
+                displayDigits = displayDigits.Substring(0, displayDigits.Length - 1);
+            }
+            else
+            {
+                displayDigits = "0";
+            }
+            
+            return displayDigits;
         }
     }
 }
