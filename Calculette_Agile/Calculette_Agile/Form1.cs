@@ -201,6 +201,7 @@ namespace Calculette_Agile
             switch (tagValue)
             {
                 case "CA":
+                    selectedOperator = customOperator.addition;
                     result = calcul.ClearAll();
                     DisplayTextBox.Text = result;
                     SignTextBox.Text = "";
