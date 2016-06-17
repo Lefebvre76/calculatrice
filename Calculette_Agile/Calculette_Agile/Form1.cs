@@ -91,8 +91,10 @@ namespace Calculette_Agile
                         result = calcul.Soustraction(result, displayValue);
                         break;
                     case customOperator.multiplication:
+                        result = calcul.Multiplication(result, displayValue);
                         break;
                     case customOperator.division:
+                        result = calcul.Division(result, displayValue);
                         break;
                     default:
                         break;
@@ -117,8 +119,10 @@ namespace Calculette_Agile
                     result = calcul.Soustraction(result, displayValue);
                     break;
                 case customOperator.multiplication:
+                    result = calcul.Multiplication(result, displayValue);
                     break;
                 case customOperator.division:
+                    result = calcul.Division(result, displayValue);
                     break;
                 case customOperator.equals:
                     // result = "0";
@@ -145,6 +149,12 @@ namespace Calculette_Agile
                     break;
                 case "=":
                     selectedOperator = customOperator.equals;
+                    break;
+                case "x":
+                    selectedOperator = customOperator.multiplication;
+                    break;
+                case "/":
+                    selectedOperator = customOperator.division;
                     break;
                 default:
                     break;
