@@ -17,7 +17,9 @@ namespace Calculette_Agile
 
         public string Addition(string ope1, string ope2)
         {
-            result = (float.Parse(ope1) + (float.Parse(ope2))).ToString().Replace('.',',');
+            float operande1 = float.Parse(ope1);
+            float operande2 = float.Parse(ope2);
+            result = (operande1 + operande2).ToString().Replace('.', ',');
             return result;
         }
 
