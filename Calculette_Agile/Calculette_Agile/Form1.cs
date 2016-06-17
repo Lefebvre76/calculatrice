@@ -67,23 +67,31 @@ namespace Calculette_Agile
             DisplayTextBox.Text = "";
             lastIsOperand = true;
             SignTextBox.Text = tagValue;
-            switch (selectedOperator)
-	        {
-                case customOperator.addition:
-                    result = calcul.Addition(result, displayValue);
-                    break;
-                case customOperator.soustraction:
-                    result = calcul.Soustraction(result, displayValue);
-                    break;
-                case customOperator.multiplication:
-                    break;
-                case customOperator.division:
-                    break;
-                default:
-                    break;
-	        }
-            DisplayTextBox.Text = result;
-            lastOperand(tagValue);
+            if (displayValue == "0" || displayValue == "")
+            {
+                DisplayTextBox.Text += "-";
+                lastIsOperand = false;
+            }
+            else
+            {
+                switch (selectedOperator)
+                {
+                    case customOperator.addition:
+                        result = calcul.Addition(result, displayValue);
+                        break;
+                    case customOperator.soustraction:
+                        result = calcul.Soustraction(result, displayValue);
+                        break;
+                    case customOperator.multiplication:
+                        break;
+                    case customOperator.division:
+                        break;
+                    default:
+                        break;
+                }
+                DisplayTextBox.Text = result;
+                lastOperand(tagValue);
+            }
         }
 
         private void OnEqualButtonClick(object sender, EventArgs e)
