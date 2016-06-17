@@ -306,7 +306,6 @@
             // CEButton
             // 
             this.CEButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CEButton.Enabled = false;
             this.CEButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CEButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CEButton.Location = new System.Drawing.Point(31, 114);
@@ -367,6 +366,10 @@
             this.Controls.Add(this.EqualButton);
             this.Controls.Add(this.DotButton);
             this.Controls.Add(this.ZeroButton);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(396, 543);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(396, 543);
             this.Name = "Calculator";
             this.Text = "Basic Calculator";
             this.ResumeLayout(false);

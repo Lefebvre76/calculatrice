@@ -146,7 +146,14 @@ namespace Calculette_Agile
                     break;
 
                 case "Back":
-                    DisplayTextBox.Text = calcul.ClearLastDigit(DisplayTextBox.Text);
+                    if (!lastIsOperand)
+                    {
+                        DisplayTextBox.Text = calcul.ClearLastDigit(DisplayTextBox.Text);
+                    }
+                    break;
+
+                case "CE":
+                    DisplayTextBox.Text = "0";
                     break;
 
                 default:
