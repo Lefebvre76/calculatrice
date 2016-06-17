@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculette_Agile
 {
-    class Calculate
+    public class Calculate
     {
         string result = "";
 

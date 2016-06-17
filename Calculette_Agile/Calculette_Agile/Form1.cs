@@ -44,7 +44,7 @@ namespace Calculette_Agile
            
         }
 
-        // TODO : déplacer le code métier dans la classe Calculator
+       
         private void OnOperationButtonClick(object sender, EventArgs e)
         {
             string tagValue = ((Button)sender).Tag.ToString();
@@ -52,12 +52,8 @@ namespace Calculette_Agile
             DisplayTextBox.Text = "";
             switch (tagValue)
             {
-                case "+":
-
-
-                    // TODO : replace code and integrate new Calculate class
+                case "+": 
                     operand1 = displayValue;
-
                     // DisplayTextBox.Text = operand1.ToString();
                     selectedOperator = customOperator.addition;
                     break;
