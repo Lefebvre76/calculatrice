@@ -87,7 +87,7 @@
             this.EqualButton.Tag = "=";
             this.EqualButton.Text = "=";
             this.EqualButton.UseVisualStyleBackColor = false;
-            this.EqualButton.Click += new System.EventHandler(this.OnOperationButtonClick);
+            this.EqualButton.Click += new System.EventHandler(this.OnEqualButtonClick);
             // 
             // OneButton
             // 

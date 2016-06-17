@@ -23,10 +23,11 @@ namespace Calculette_Agile
         }
 
         customOperator selectedOperator = customOperator.addition;
-        string operand1;
-        string operand2;
-        string result;
-        bool isNegative;
+        string operand1 = "0";
+        string operand2 = "0";
+        string result = "0";
+        string lastResultValue = "0";
+        bool lastIsOperand = false;
         Calculate calcul = new Calculate();
 
 
@@ -37,12 +38,23 @@ namespace Calculette_Agile
 
         private void OnNumericButtonClick(object sender, EventArgs e)
         {
-            var myNumber = ((Button)sender).Tag;
-            if (DisplayTextBox.Text.Length < 10)
+            string myNumber = ((Button)sender).Tag.ToString();
+            if (lastIsOperand)
             {
-                DisplayTextBox.Text += myNumber.ToString();
+                DisplayTextBox.Text = myNumber;
+                if (selectedOperator.Equals(customOperator.equals))
+                {
+                    result = DisplayTextBox.Text.ToString();
+                }
             }
-           
+            else
+            {
+                if (DisplayTextBox.Text.Length < 10)
+                {
+                    DisplayTextBox.Text += myNumber.ToString();
+                }
+            }
+            lastIsOperand = false;
         }
 
        
@@ -51,56 +63,75 @@ namespace Calculette_Agile
             string tagValue = ((Button)sender).Tag.ToString();
             string displayValue = DisplayTextBox.Text;
             DisplayTextBox.Text = "";
-            switch (tagValue)
-            {
-                case "+": 
-                    operand1 = displayValue;
-                    // DisplayTextBox.Text = operand1.ToString();
-                    selectedOperator = customOperator.addition;
+            lastIsOperand = true;
+            
+            switch (selectedOperator)
+	        {
+                case customOperator.addition:
+                    result = calcul.Addition(result, displayValue);
                     break;
-                case "-":
-                    if (displayValue == "")
-                    {
-                        DisplayTextBox.Text += "-";
-                    }
-                    else
-                    {
-                        operand1 = displayValue;
-                        selectedOperator = customOperator.soustraction;
-                    }
+                case customOperator.soustraction:
+                    result = calcul.Soustraction(result, displayValue);
                     break;
-                case "=":
-                    switch (selectedOperator)
-	                {
-                        case customOperator.addition:
-                                result = calcul.Addition(operand1, displayValue);
-                                selectedOperator = customOperator.equals;
-                            break;
-                        case customOperator.soustraction:
-                                result = calcul.Soustraction(operand1, displayValue);
-                                selectedOperator = customOperator.equals;
-                            break;
-                        case customOperator.multiplication:
-                            break;
-                        case customOperator.division:
-                            break;
-                        case customOperator.equals:
-                            break;
-                        default:
-                            break;
-	                }
+                case customOperator.multiplication:
+                    break;
+                case customOperator.division:
+                    break;
+                default:
+                    break;
+	        }
+            DisplayTextBox.Text = result;
+            lastOperand(tagValue);
+        }
 
-                    DisplayTextBox.Text = result;
-                    
+        private void OnEqualButtonClick(object sender, EventArgs e)
+        {
+            string displayValue = DisplayTextBox.Text;
+            DisplayTextBox.Text = "";
+            lastIsOperand = true;
+
+            switch (selectedOperator)
+            {
+                case customOperator.addition:
+                    result = calcul.Addition(result, displayValue);
+                    break;
+                case customOperator.soustraction:
+                    result = calcul.Soustraction(result, displayValue);
+                    break;
+                case customOperator.multiplication:
+                    break;
+                case customOperator.division:
+                    break;
+                case customOperator.equals:
+                    result = "0";
+                    operand1 = "0";
                     break;
                 default:
                     break;
             }
-
-            //
-            
+            DisplayTextBox.Text = result;
+            lastOperand("=");
         }
 
+        public void lastOperand (string tag)
+        {
+            switch (tag)
+            {
+                case "+":
+                    selectedOperator = customOperator.addition;
+                    break;
+                case "-":
+                    selectedOperator = customOperator.soustraction;
+                    break;
+                case "=":
+                    selectedOperator = customOperator.equals;
 
+                    break;
+                default:
+                    break;
+            }
+        }
     }
+
+    
 }
