@@ -59,6 +59,7 @@ namespace Calculette_Agile
                     operand1 = displayValue;
                     // DisplayTextBox.Text = operand1.ToString();
                     selectedOperator = customOperator.addition;
+                    SignTextBox.Text = "+";
                     break;
                 
                 case "=":
@@ -66,6 +67,7 @@ namespace Calculette_Agile
                     {
                         result = calcul.Addition(operand1, displayValue);
                         selectedOperator = customOperator.equals;
+                        SignTextBox.Text = "=";
                     }
                     
                     DisplayTextBox.Text = result;
@@ -85,6 +87,11 @@ namespace Calculette_Agile
                 case "CA":
                     result = calcul.ClearAll();
                     DisplayTextBox.Text = result;
+                    SignTextBox.Text = "";
+                    break;
+
+                case "Back":
+                    DisplayTextBox.Text = calcul.ClearLastDigit(DisplayTextBox.Text);
                     break;
 
                 default:

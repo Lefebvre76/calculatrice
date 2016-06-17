@@ -26,5 +26,19 @@ namespace Calculette_Agile
             result = "0";
             return result;
         }
+
+        public string ClearLastDigit(string displayDigits)
+        {
+            if (displayDigits.Length > 1)
+            {
+                displayDigits = displayDigits.Substring(0, displayDigits.Length - 1);
+            }
+            else
+            {
+                displayDigits = "0";
+            }
+            
+            return displayDigits;
+        }
     }
 }

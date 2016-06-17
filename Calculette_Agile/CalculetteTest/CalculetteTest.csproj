@@ -55,8 +55,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestClear.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

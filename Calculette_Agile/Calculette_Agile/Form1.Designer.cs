@@ -48,11 +48,13 @@
             this.CAButton = new System.Windows.Forms.Button();
             this.CEButton = new System.Windows.Forms.Button();
             this.DisplayTextBox = new System.Windows.Forms.TextBox();
+            this.SignTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ZeroButton
             // 
             this.ZeroButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ZeroButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ZeroButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZeroButton.Location = new System.Drawing.Point(31, 402);
             this.ZeroButton.Name = "ZeroButton";
@@ -67,6 +69,7 @@
             // 
             this.DotButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.DotButton.Enabled = false;
+            this.DotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DotButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DotButton.Location = new System.Drawing.Point(193, 402);
             this.DotButton.Name = "DotButton";
@@ -79,6 +82,7 @@
             // EqualButton
             // 
             this.EqualButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.EqualButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EqualButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EqualButton.Location = new System.Drawing.Point(274, 402);
             this.EqualButton.Name = "EqualButton";
@@ -92,6 +96,7 @@
             // OneButton
             // 
             this.OneButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.OneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OneButton.Location = new System.Drawing.Point(31, 330);
             this.OneButton.Name = "OneButton";
@@ -105,6 +110,7 @@
             // TwoButton
             // 
             this.TwoButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.TwoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TwoButton.Location = new System.Drawing.Point(112, 330);
             this.TwoButton.Name = "TwoButton";
@@ -118,6 +124,7 @@
             // ThreeButton
             // 
             this.ThreeButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ThreeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThreeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThreeButton.Location = new System.Drawing.Point(193, 330);
             this.ThreeButton.Name = "ThreeButton";
@@ -131,6 +138,7 @@
             // PlusButton
             // 
             this.PlusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.PlusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlusButton.Location = new System.Drawing.Point(274, 330);
             this.PlusButton.Name = "PlusButton";
@@ -144,6 +152,7 @@
             // FourButton
             // 
             this.FourButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.FourButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FourButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FourButton.Location = new System.Drawing.Point(31, 258);
             this.FourButton.Name = "FourButton";
@@ -157,6 +166,7 @@
             // FiveButton
             // 
             this.FiveButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.FiveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FiveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FiveButton.Location = new System.Drawing.Point(112, 258);
             this.FiveButton.Name = "FiveButton";
@@ -170,6 +180,7 @@
             // SixButton
             // 
             this.SixButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.SixButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SixButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SixButton.Location = new System.Drawing.Point(193, 258);
             this.SixButton.Name = "SixButton";
@@ -183,6 +194,7 @@
             // SevenButton
             // 
             this.SevenButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.SevenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SevenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SevenButton.Location = new System.Drawing.Point(31, 186);
             this.SevenButton.Name = "SevenButton";
@@ -196,6 +208,7 @@
             // EightButton
             // 
             this.EightButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.EightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EightButton.Location = new System.Drawing.Point(112, 186);
             this.EightButton.Name = "EightButton";
@@ -209,6 +222,7 @@
             // NineButton
             // 
             this.NineButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.NineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NineButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NineButton.Location = new System.Drawing.Point(193, 186);
             this.NineButton.Name = "NineButton";
@@ -223,6 +237,7 @@
             // 
             this.MinusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.MinusButton.Enabled = false;
+            this.MinusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinusButton.Location = new System.Drawing.Point(274, 258);
             this.MinusButton.Name = "MinusButton";
@@ -236,6 +251,7 @@
             // 
             this.TimesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.TimesButton.Enabled = false;
+            this.TimesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimesButton.Location = new System.Drawing.Point(274, 186);
             this.TimesButton.Name = "TimesButton";
@@ -249,6 +265,7 @@
             // 
             this.DivideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.DivideButton.Enabled = false;
+            this.DivideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DivideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DivideButton.Location = new System.Drawing.Point(274, 114);
             this.DivideButton.Name = "DivideButton";
@@ -261,7 +278,7 @@
             // CorrectButton
             // 
             this.CorrectButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CorrectButton.Enabled = false;
+            this.CorrectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CorrectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorrectButton.Location = new System.Drawing.Point(193, 114);
             this.CorrectButton.Name = "CorrectButton";
@@ -275,6 +292,7 @@
             // CAButton
             // 
             this.CAButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CAButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CAButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CAButton.Location = new System.Drawing.Point(112, 114);
             this.CAButton.Name = "CAButton";
@@ -289,6 +307,7 @@
             // 
             this.CEButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CEButton.Enabled = false;
+            this.CEButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CEButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CEButton.Location = new System.Drawing.Point(31, 114);
             this.CEButton.Name = "CEButton";
@@ -302,18 +321,32 @@
             // DisplayTextBox
             // 
             this.DisplayTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DisplayTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DisplayTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DisplayTextBox.Location = new System.Drawing.Point(31, 39);
+            this.DisplayTextBox.Location = new System.Drawing.Point(88, 39);
             this.DisplayTextBox.Name = "DisplayTextBox";
-            this.DisplayTextBox.Size = new System.Drawing.Size(317, 50);
+            this.DisplayTextBox.Size = new System.Drawing.Size(260, 43);
             this.DisplayTextBox.TabIndex = 19;
             this.DisplayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // SignTextBox
+            // 
+            this.SignTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SignTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignTextBox.Location = new System.Drawing.Point(31, 39);
+            this.SignTextBox.Name = "SignTextBox";
+            this.SignTextBox.Size = new System.Drawing.Size(57, 43);
+            this.SignTextBox.TabIndex = 20;
+            this.SignTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(380, 505);
+            this.Controls.Add(this.SignTextBox);
             this.Controls.Add(this.DisplayTextBox);
             this.Controls.Add(this.CEButton);
             this.Controls.Add(this.CAButton);
@@ -363,6 +396,7 @@
         private System.Windows.Forms.Button CAButton;
         private System.Windows.Forms.Button CEButton;
         private System.Windows.Forms.TextBox DisplayTextBox;
+        private System.Windows.Forms.TextBox SignTextBox;
     }
 }
 
