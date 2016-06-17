@@ -20,5 +20,11 @@ namespace Calculette_Agile
             result = (float.Parse(ope1) + (float.Parse(ope2))).ToString().Replace('.',',');
             return result;
         }
+
+        public string Soustraction(string ope1, string ope2)
+        {
+            result = (float.Parse(ope1) - (float.Parse(ope2))).ToString().Replace('.', ',');
+            return result;
+        }
     }
 }

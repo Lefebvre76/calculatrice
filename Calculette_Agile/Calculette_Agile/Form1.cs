@@ -26,6 +26,7 @@ namespace Calculette_Agile
         string operand1;
         string operand2;
         string result;
+        bool isNegative;
         Calculate calcul = new Calculate();
 
 
@@ -57,13 +58,38 @@ namespace Calculette_Agile
                     // DisplayTextBox.Text = operand1.ToString();
                     selectedOperator = customOperator.addition;
                     break;
-                case "=":
-                    if (selectedOperator == customOperator.addition)
+                case "-":
+                    if (displayValue == "")
                     {
-                        result = calcul.Addition(operand1, displayValue);
-                        selectedOperator = customOperator.equals;
+                        DisplayTextBox.Text += "-";
                     }
-                    
+                    else
+                    {
+                        operand1 = displayValue;
+                        selectedOperator = customOperator.soustraction;
+                    }
+                    break;
+                case "=":
+                    switch (selectedOperator)
+	                {
+                        case customOperator.addition:
+                                result = calcul.Addition(operand1, displayValue);
+                                selectedOperator = customOperator.equals;
+                            break;
+                        case customOperator.soustraction:
+                                result = calcul.Soustraction(operand1, displayValue);
+                                selectedOperator = customOperator.equals;
+                            break;
+                        case customOperator.multiplication:
+                            break;
+                        case customOperator.division:
+                            break;
+                        case customOperator.equals:
+                            break;
+                        default:
+                            break;
+	                }
+
                     DisplayTextBox.Text = result;
                     
                     break;

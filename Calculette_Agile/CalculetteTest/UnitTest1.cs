@@ -31,5 +31,26 @@ namespace CalculetteTest
             Calculette_Agile.Calculate calculate = new Calculate();
             Assert.AreEqual(calculate.Addition("-1", "-1"), "-2");
         }
+
+        [TestMethod]
+        public void TestSoustraction()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreEqual(calculate.Soustraction("20", "10"), "10");
+        }
+
+        [TestMethod]
+        public void TestSoustractionFailed()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreNotEqual(calculate.Soustraction("20", "10"), "-100");
+        }
+
+        [TestMethod]
+        public void TestSoustractionNegatif()
+        {
+            Calculette_Agile.Calculate calculate = new Calculate();
+            Assert.AreEqual(calculate.Soustraction("-1", "-10"), "9");
+        }
     }
 }

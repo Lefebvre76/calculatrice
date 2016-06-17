@@ -222,7 +222,6 @@
             // MinusButton
             // 
             this.MinusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.MinusButton.Enabled = false;
             this.MinusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinusButton.Location = new System.Drawing.Point(274, 258);
             this.MinusButton.Name = "MinusButton";
@@ -231,6 +230,7 @@
             this.MinusButton.Tag = "-";
             this.MinusButton.Text = "-";
             this.MinusButton.UseVisualStyleBackColor = false;
+            this.MinusButton.Click += new System.EventHandler(this.OnOperationButtonClick);
             // 
             // TimesButton
             // 
