@@ -66,7 +66,7 @@ namespace Calculette_Agile
             string displayValue = DisplayTextBox.Text;
             DisplayTextBox.Text = "";
             lastIsOperand = true;
-            
+            SignTextBox.Text = tagValue;
             switch (selectedOperator)
 	        {
                 case customOperator.addition:
@@ -91,7 +91,7 @@ namespace Calculette_Agile
             string displayValue = DisplayTextBox.Text;
             DisplayTextBox.Text = "";
             lastIsOperand = true;
-
+            SignTextBox.Text = "=";
             switch (selectedOperator)
             {
                 case customOperator.addition:
