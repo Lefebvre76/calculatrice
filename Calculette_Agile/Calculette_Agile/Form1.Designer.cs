@@ -354,13 +354,14 @@
             this.button1.Tag = "+-";
             this.button1.Text = "+/-";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.OnChangeSignButtonClick);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(380, 512);
+            this.ClientSize = new System.Drawing.Size(380, 511);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.SignTextBox);
             this.Controls.Add(this.DisplayTextBox);

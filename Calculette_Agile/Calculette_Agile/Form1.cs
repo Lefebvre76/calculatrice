@@ -31,12 +31,13 @@ namespace Calculette_Agile
         Calculate calcul = new Calculate();
 
 
+
+
         public Calculator()
         {
             InitializeComponent();
             setOperatorsEnabled(false);
             EqualButton.Enabled = false;
-            MinusButton.Enabled = true;
         }
 
         private void OnNumericButtonClick(object sender, EventArgs e)
@@ -75,6 +76,7 @@ namespace Calculette_Agile
             DisplayTextBox.Text = "";
             lastIsOperand = true;
             SignTextBox.Text = tagValue;
+            /*
             if (displayValue == "0" || displayValue == "")
             {
                 DisplayTextBox.Text = "-";
@@ -82,6 +84,7 @@ namespace Calculette_Agile
             }
             else
             {
+             * */
                 switch (selectedOperator)
                 {
                     case customOperator.addition:
@@ -101,7 +104,7 @@ namespace Calculette_Agile
                 }
                 DisplayTextBox.Text = result;
                 lastOperand(tagValue);
-            }
+            //}
         }
 
         private void OnEqualButtonClick(object sender, EventArgs e)
@@ -183,12 +186,34 @@ namespace Calculette_Agile
                     DisplayTextBox.Text = "0";
                     setOperatorsEnabled(false);
                     EqualButton.Enabled = false;
-                    MinusButton.Enabled = true;
                     break;
 
                 default:
                     break;
             }
+        }
+
+        private void OnChangeSignButtonClick(object sender, EventArgs e)
+        {
+            if (lastIsOperand)
+            {
+                DisplayTextBox.Text = "-";
+            }
+            else
+            {
+                string displayValue = DisplayTextBox.Text;
+
+                if (displayValue.Contains('-'))
+                {
+                    DisplayTextBox.Text = displayValue.Replace("-", string.Empty);
+                }
+                else
+                {
+                    DisplayTextBox.Text = "-" + displayValue;
+                }
+            }
+            lastIsOperand = false;
+            
         }
 
         private void setOperatorsEnabled(bool isEnabled)
