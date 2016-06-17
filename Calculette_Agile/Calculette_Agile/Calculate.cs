@@ -28,6 +28,29 @@ namespace Calculette_Agile
             return result;
         }
 
+
+        public string Multiplication(string ope1, string ope2)
+        {
+            result = (float.Parse(ope1) * (float.Parse(ope2))).ToString().Replace('.', ',');
+            return result;
+        }
+
+
+        public string Division(string ope1, string ope2)
+        {
+            float ope2Float = float.Parse(ope2);
+            if (ope2Float == 0)
+            {
+                result = "Err /0";
+            }
+            else
+            {
+                result = (float.Parse(ope1) / (float.Parse(ope2))).ToString().Replace('.', ',');
+            }
+            return result;
+        }
+
+
         public string ClearAll()
         {
             result = "0";

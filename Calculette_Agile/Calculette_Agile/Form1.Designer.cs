@@ -250,21 +250,20 @@
             // TimesButton
             // 
             this.TimesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.TimesButton.Enabled = false;
             this.TimesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimesButton.Location = new System.Drawing.Point(274, 186);
             this.TimesButton.Name = "TimesButton";
             this.TimesButton.Size = new System.Drawing.Size(75, 66);
             this.TimesButton.TabIndex = 14;
-            this.TimesButton.Tag = "*";
+            this.TimesButton.Tag = "x";
             this.TimesButton.Text = "x";
             this.TimesButton.UseVisualStyleBackColor = false;
+            this.TimesButton.Click += new System.EventHandler(this.OnOperationButtonClick);
             // 
             // DivideButton
             // 
             this.DivideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.DivideButton.Enabled = false;
             this.DivideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DivideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DivideButton.Location = new System.Drawing.Point(274, 114);
@@ -274,6 +273,7 @@
             this.DivideButton.Tag = "/";
             this.DivideButton.Text = "/";
             this.DivideButton.UseVisualStyleBackColor = false;
+            this.DivideButton.Click += new System.EventHandler(this.OnOperationButtonClick);
             // 
             // CorrectButton
             // 
