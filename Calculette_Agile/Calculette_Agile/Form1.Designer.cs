@@ -263,6 +263,7 @@
             // 
             // DivideButton
             // 
+            this.DivideButton.AccessibleName = "";
             this.DivideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.DivideButton.Enabled = false;
             this.DivideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -344,7 +345,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(380, 505);
+            this.ClientSize = new System.Drawing.Size(380, 504);
             this.Controls.Add(this.SignTextBox);
             this.Controls.Add(this.DisplayTextBox);
             this.Controls.Add(this.CEButton);

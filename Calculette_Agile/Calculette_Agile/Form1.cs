@@ -34,10 +34,15 @@ namespace Calculette_Agile
         public Calculator()
         {
             InitializeComponent();
+            setOperatorsEnabled(false);
+            EqualButton.Enabled = false;
+            MinusButton.Enabled = true;
         }
 
         private void OnNumericButtonClick(object sender, EventArgs e)
         {
+            setOperatorsEnabled(true);
+            EqualButton.Enabled = true;
             string myNumber = ((Button)sender).Tag.ToString();
             if (lastIsOperand)
             {
@@ -62,6 +67,7 @@ namespace Calculette_Agile
        
         private void OnOperationButtonClick(object sender, EventArgs e)
         {
+            setOperatorsEnabled(false);
             string tagValue = ((Button)sender).Tag.ToString();
             string displayValue = DisplayTextBox.Text;
             DisplayTextBox.Text = "";
@@ -69,7 +75,7 @@ namespace Calculette_Agile
             SignTextBox.Text = tagValue;
             if (displayValue == "0" || displayValue == "")
             {
-                DisplayTextBox.Text += "-";
+                DisplayTextBox.Text = "-";
                 lastIsOperand = false;
             }
             else
@@ -113,8 +119,8 @@ namespace Calculette_Agile
                 case customOperator.division:
                     break;
                 case customOperator.equals:
-                    result = "0";
-                    operand1 = "0";
+                    // result = "0";
+                    // operand1 = "0";
                     break;
 
                 default:
@@ -122,6 +128,7 @@ namespace Calculette_Agile
             }
             DisplayTextBox.Text = result;
             lastOperand("=");
+            EqualButton.Enabled = false;
         }
 
         public void lastOperand (string tag)
@@ -162,11 +169,22 @@ namespace Calculette_Agile
 
                 case "CE":
                     DisplayTextBox.Text = "0";
+                    setOperatorsEnabled(false);
+                    EqualButton.Enabled = false;
+                    MinusButton.Enabled = true;
                     break;
 
                 default:
                     break;
             }
+        }
+
+        private void setOperatorsEnabled(bool isEnabled)
+        {
+            DivideButton.Enabled = isEnabled;
+            TimesButton.Enabled = isEnabled;
+            PlusButton.Enabled = isEnabled;
+            MinusButton.Enabled = isEnabled;
         }
 
     }
