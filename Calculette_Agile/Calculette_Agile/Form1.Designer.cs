@@ -270,11 +270,11 @@
             this.CorrectButton.Tag = "Back";
             this.CorrectButton.Text = "Back";
             this.CorrectButton.UseVisualStyleBackColor = false;
+            this.CorrectButton.Click += new System.EventHandler(this.OnClearButtonClick);
             // 
             // CAButton
             // 
             this.CAButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CAButton.Enabled = false;
             this.CAButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CAButton.Location = new System.Drawing.Point(112, 114);
             this.CAButton.Name = "CAButton";
@@ -283,6 +283,7 @@
             this.CAButton.Tag = "CA";
             this.CAButton.Text = "CA";
             this.CAButton.UseVisualStyleBackColor = false;
+            this.CAButton.Click += new System.EventHandler(this.OnClearButtonClick);
             // 
             // CEButton
             // 
@@ -296,6 +297,7 @@
             this.CEButton.Tag = "CE";
             this.CEButton.Text = "CE";
             this.CEButton.UseVisualStyleBackColor = false;
+            this.CEButton.Click += new System.EventHandler(this.OnClearButtonClick);
             // 
             // DisplayTextBox
             // 

@@ -36,9 +36,12 @@ namespace Calculette_Agile
 
         private void OnNumericButtonClick(object sender, EventArgs e)
         {
-            var myNumber = ((Button)sender).Tag;
+            string myNumber = ((Button)sender).Tag.ToString();
+ 
             if (DisplayTextBox.Text.Length < 10)
             {
+                // Clear all left zeros
+                DisplayTextBox.Text = DisplayTextBox.Text.TrimStart('0');
                 DisplayTextBox.Text += myNumber.ToString();
             }
            
@@ -57,6 +60,7 @@ namespace Calculette_Agile
                     // DisplayTextBox.Text = operand1.ToString();
                     selectedOperator = customOperator.addition;
                     break;
+                
                 case "=":
                     if (selectedOperator == customOperator.addition)
                     {
@@ -65,14 +69,27 @@ namespace Calculette_Agile
                     }
                     
                     DisplayTextBox.Text = result;
-                    
                     break;
+
                 default:
                     break;
             }
-
-            //
             
+        }
+
+        private void OnClearButtonClick(object sender, EventArgs e)
+        {
+            string tagValue = ((Button)sender).Tag.ToString();
+            switch (tagValue)
+            {
+                case "CA":
+                    result = calcul.ClearAll();
+                    DisplayTextBox.Text = result;
+                    break;
+
+                default:
+                    break;
+            }
         }
 
 

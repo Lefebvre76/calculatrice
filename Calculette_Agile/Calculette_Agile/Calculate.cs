@@ -20,5 +20,11 @@ namespace Calculette_Agile
             result = (float.Parse(ope1) + (float.Parse(ope2))).ToString().Replace('.',',');
             return result;
         }
+
+        public string ClearAll()
+        {
+            result = "0";
+            return result;
+        }
     }
 }
