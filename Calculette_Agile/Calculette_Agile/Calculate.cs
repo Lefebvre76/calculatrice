@@ -25,8 +25,8 @@ namespace Calculette_Agile
 
         public string Addition(string ope1, string ope2)
         {
-            float operande1 = float.Parse(ope1);
-            float operande2 = float.Parse(ope2);
+            float operande1 = float.Parse(ope1.Replace('.', ','));
+            float operande2 = float.Parse(ope2.Replace('.', ','));
             result = (operande1 + operande2).ToString().Replace('.', ',');
             return result;
         }
@@ -34,14 +34,14 @@ namespace Calculette_Agile
 
         public string Soustraction(string ope1, string ope2)
         {
-            result = (float.Parse(ope1) - (float.Parse(ope2))).ToString().Replace('.', ',');
+            result = (float.Parse(ope1.Replace('.', ',')) - (float.Parse(ope2.Replace('.', ',')))).ToString().Replace('.', ',');
             return result;
         }
 
 
         public string Multiplication(string ope1, string ope2)
         {
-            result = (float.Parse(ope1) * (float.Parse(ope2))).ToString().Replace('.', ',');
+            result = (float.Parse(ope1.Replace('.', ',')) * (float.Parse(ope2.Replace('.', ',')))).ToString().Replace('.', ',');
             return result;
         }
 
@@ -55,7 +55,7 @@ namespace Calculette_Agile
             }
             else
             {
-                result = (float.Parse(ope1) / (float.Parse(ope2))).ToString().Replace('.', ',');
+                result = (float.Parse(ope1.Replace('.', ',')) / (float.Parse(ope2.Replace('.', ',')))).ToString().Replace('.', ',');
             }
             return result;
         }

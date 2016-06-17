@@ -45,23 +45,42 @@ namespace Calculette_Agile
             setOperatorsEnabled(true);
             EqualButton.Enabled = true;
             string myNumber = ((Button)sender).Tag.ToString();
-            if (lastIsOperand)
+            if (myNumber == ".")
             {
-                DisplayTextBox.Text = myNumber;
-                if (selectedOperator.Equals(customOperator.equals))
+                if (DisplayTextBox.Text == "" || DisplayTextBox.Text == "0") 
                 {
-                    result = DisplayTextBox.Text.ToString();
+                    DisplayTextBox.Text = "0,";
+                }
+                else
+                {
+                    DisplayTextBox.Text += ",";
                 }
             }
-            else
+            else 
             {
-                if (DisplayTextBox.Text.Length < 10)
+                if (lastIsOperand)
                 {
-                    // Clear all left zeros
-                DisplayTextBox.Text = DisplayTextBox.Text.TrimStart('0');
-                DisplayTextBox.Text += myNumber.ToString();
+                    DisplayTextBox.Text = myNumber;
+                    if (selectedOperator.Equals(customOperator.equals))
+                    {
+                        result = DisplayTextBox.Text.ToString();
+                    }
+                }
+                else
+                {
+                    if (DisplayTextBox.Text.Length < 10)
+                    {
+                        // Clear all left zeros
+                        if (!DisplayTextBox.Text.Contains("0,"))
+                        {
+                            DisplayTextBox.Text = DisplayTextBox.Text.TrimStart('0');
+                        }
+                        DisplayTextBox.Text += myNumber.ToString();
+                    }
                 }
             }
+
+            enabledDecimal();
             lastIsOperand = false;
         }
 
@@ -119,7 +138,7 @@ namespace Calculette_Agile
                     setOperatorsEnabled(false);
                 }
             }
-
+            enabledDecimal();
             //}
         }
 
@@ -169,6 +188,7 @@ namespace Calculette_Agile
                     setOperatorsEnabled(false);
                 }
             }
+            enabledDecimal();
         }
 
         public void lastOperand (string tag)
@@ -225,6 +245,7 @@ namespace Calculette_Agile
                 default:
                     break;
             }
+            enabledDecimal();
         }
 
         private void OnChangeSignButtonClick(object sender, EventArgs e)
@@ -258,6 +279,17 @@ namespace Calculette_Agile
             MinusButton.Enabled = isEnabled;
         }
 
+        private void enabledDecimal() {
+            string displayValue = DisplayTextBox.Text;
+            if (displayValue.Contains(','))
+            {
+                DotButton.Enabled = false;
+            }
+            else
+            {
+                DotButton.Enabled = true;
+            }
+        }
     }
     
 }
