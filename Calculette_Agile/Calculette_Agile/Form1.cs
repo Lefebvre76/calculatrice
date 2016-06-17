@@ -68,6 +68,8 @@ namespace Calculette_Agile
         private void OnOperationButtonClick(object sender, EventArgs e)
         {
             setOperatorsEnabled(false);
+
+            EqualButton.Enabled = false;
             string tagValue = ((Button)sender).Tag.ToString();
             string displayValue = DisplayTextBox.Text;
             DisplayTextBox.Text = "";
